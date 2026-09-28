@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'leaflet/dist/leaflet.css';
+@import 'leaflet.markercluster/dist/MarkerCluster.css';
+@import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rp-bg: #0A0E17;
+  --rp-bg2: #0F172A;
+  --rp-card: #111827;
+  --rp-border: #1E293B;
+  --rp-border2: #334155;
+}
+
+* { border-color: var(--rp-border); }
+
+body {
+  margin: 0;
+  background: var(--rp-bg);
+  color: #F8FAFC;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display { font-family: 'Outfit', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0A0E17; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Leaflet dark theme */
+.leaflet-container { background: #0A0E17; font-family: 'Inter', sans-serif; }
+.leaflet-tile { filter: brightness(0.62) invert(1) contrast(0.92) hue-rotate(190deg) saturate(0.35) brightness(0.92); }
+.leaflet-control-attribution { background: rgba(10,14,23,0.75) !important; color: #64748B !important; }
+.leaflet-control-attribution a { color: #64748B !important; }
+.leaflet-bar a { background: #111827; color: #F8FAFC; border-color: #334155; }
+.leaflet-bar a:hover { background: #1E293B; }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: #111827; color: #F8FAFC; border: 1px solid #334155; }
+
+.rp-marker { border-radius: 50%; border: 2px solid rgba(255,255,255,0.85); box-shadow: 0 0 0 2px rgba(0,0,0,0.4); }
+.rp-bus-marker { display:flex; align-items:center; justify-content:center; background:#3B82F6; color:#fff; border-radius:6px; border:2px solid #fff; font-weight:700; font-size:10px; box-shadow:0 2px 6px rgba(0,0,0,0.5); }
+
+@keyframes rp-ping { 75%, 100% { transform: scale(2.2); opacity: 0; } }
+.rp-ping { animation: rp-ping 1.4s cubic-bezier(0,0,0.2,1) infinite; }
+
+@keyframes rp-fade-up { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.rp-fade-up { animation: rp-fade-up 0.35s ease-out both; }
+
+.rp-grid-bg {
+  background-image: linear-gradient(rgba(51,65,85,0.15) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(51,65,85,0.15) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+
